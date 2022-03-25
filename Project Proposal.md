@@ -5,25 +5,32 @@ Even if you choose to use one or more of the suggested example project goals, as
 Data Set Used: <http://snap.stanford.edu/data/twitch_gamers.html>
 
 1. Leading Question: Can I find a similar stream given a constraint on viewer count from a list of streamers and their mutual viewership?
-1. Dataset Acquisition and Processing :
-- Data format: Adjacency matrix implemented using maps
-- Data Correction.*Note: These are just suggestions – you may have many other ideas for how to find and correct problems in your dataset*
-1. The nodes read in from the dataset will be twitch ids/names
-1. The edges represent mutual viewers between two streams
-   1. Data Storage: CSV of Streamers’ ids, CSV of edges
+2. Dataset Acquisition and Processing :
+   - Data format: Adjacency matrix implemented using maps
+   - Data Correction:
+      - The nodes read in from the dataset will be twitch ids/names
+      - The edges represent mutual viewers between two streams
+   - Data Storage: 
+      - CSV of Streamers’ ids
+      - CSV of edges
 3. Graph Algorithms:
-   1. Function Inputs: Streamer ID, bounded viewer count, boolean value for maturity content
-   1. Function Outputs: The most appropriate stream for users’ constraint and the shortest path to said stream/an error if no stream could be found.
-   1. Function Efficiency: O(n)
-4. NOTE: To be considered a valid final project, your team must implement at least two graph data algorithms as well as a graph traversal from the list of example goals or you must propose an algorithm or set of graph algorithms that represent an equivalent amount of coding development.
+   - Function Inputs: Streamer ID, bounded viewer count, boolean value for maturity content.
+   - Function Outputs: The most appropriate stream for users’ constraint and the shortest path to said  stream/an error if no stream could be found.
+   - Function Efficiency: O(n)
 4. Timeline:
-- Algorithms for reading data set
-  - One to read in data from CSV
-  - One to write data to a graph
-- Algorithms for traversing graph
-1. DFS
-1. BFS
+   - Algorithms for reading data set
+      - One to read in data from CSV.
+      - One to write data to a graph.
+   - Algorithms for traversing graph 
+      - DFS
+      - BFS
 
 SIGNATURES:
 
-Charles Lewis (calewis5)
+X. Charles Lewis (calewis5)
+
+X. Al Kaleshi (akales3)
+
+X. Group Member 3 (netid)
+
+X. Group Member 4 (netid)
