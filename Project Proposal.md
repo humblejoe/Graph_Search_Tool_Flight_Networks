@@ -31,6 +31,6 @@ X. Charles Lewis (calewis5)
 
 X. Al Kaleshi (akales3)
 
-X. Group Member 3 (netid)
+X. Marcin Malysa (mmalysa2)
 
 X. Group Member 4 (netid)

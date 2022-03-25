@@ -21,8 +21,10 @@ Respect: Our group agrees to consider all other members’ opinions and ideas. D
 
 SIGNATURES OF AGREEMENT TO ABOVE TERMS:
 
-X:Al Kaleshi (akales3) X:Charles Lewis (calewis5)
+X. Al Kaleshi (akales3)
 
-X:Manish Kumar(mkumar41) X:Marcin Malysa (mamalysa2)
+X. Charles Lewis (calewis5)
 
-Manish Kumar - 
+X. Manish Kumar (mkumar41) 
+
+X. Marcin Malysa (mmalysa2)
