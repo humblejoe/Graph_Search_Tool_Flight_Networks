@@ -17,6 +17,8 @@ Data Set Used: <http://snap.stanford.edu/data/twitch_gamers.html>
    - Function Inputs: Streamer ID, bounded viewer count, boolean value for maturity content.
    - Function Outputs: The most appropriate stream for users’ constraint and the shortest path to said  stream/an error if no stream could be found.
    - Function Efficiency: O(n)
+   - Dijkstra
+   -Kruskal Minimum Spanning Tree
 4. Timeline:
    - Algorithms for reading data set
       - One to read in data from CSV.
