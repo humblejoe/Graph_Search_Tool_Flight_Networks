@@ -1,48 +1,47 @@
 ﻿Team Seg Fools Project Proposal
 
-Even if you choose to use one or more of the suggested example project goals, as a team you are responsible for submitting a project proposal of no more than two pages that contains the following information:
-
-Data Set Used: <http://snap.stanford.edu/data/twitch_gamers.html>
+Data Set Used: <https://snap.stanford.edu/data/reachability.html>
 
 1. Leading Question:
-   - We will be finding the shortest path between two twitch users depending on their mutual relationship. 
-      - Input: Two twitch users.
-      - Output: The list of users which fall in the shortest path.
-      - Can I find a similar stream given a constraint on viewer count from a list of streamers and their mutual viewership? For example, say you wanted to watch a  creator with a smaller community who has similar content to another streamer, but does not contain mature content, a graph constructed from this dataset would be able to find a streamer that fits this query.
+   - Calculating the shortest path(ones that will take the least amount of time) between two airports.
+      (i) How much of a better solution will Djikstra give than BFS?
+   - Calculating Traveling Salesman: What is the quickest route I can take given a city to visit every other city and return to my starting point?
 2. Dataset Acquisition and Processing :
-   - Data format: Adjacency matrix implemented using maps
+   - Data format:
+      Adjacency matrix (2D Vector of int pointers) to store the dataset. |V| x |V| matrix. The values in the matrix represent the weights of the edges or the time taken to go from one city to the other(adjacent vertices).
    - Data Correction:
-      - The nodes read in from the dataset will be twitch ids/names
-      - The edges represent mutual viewers between two streams. These edges can be read into an adjacency list of pointers,  nullptr if a node does not contain an edge to another node.
-      - If there are any vertices without edges, they will be ignored because there would be no way to traverse to that point in the graph.
-      - If we are looking for a streamer with a specific attribute in the graph, we should construct a list of known attributes prior that is checked every time a query is inserted. If an unknown attribute is searched, the search can be terminated immediately because we will know the attribute is invalid.
+      - The id’s represent the vertices in the graph. The connected vertices in the graph will be stored using an adjacency.
+      - If a vertex is found to not have any connected edges, it will be removed from the adjacency matrix
    - Data Storage: 
-      - Because the graph will consist of real data, we can expect that the adjacency list will have a space complexity of O(V+E).
-3. Graph Algorithms:
-   - Function Inputs: Streamer ID, bounded viewer count, language, boolean value for maturity content.
-   - Function Outputs: The most appropriate stream for users’ constraint and the shortest path to said stream/an error if no stream could be found. 
-   - Function Efficiency:
-      - Adjacency list
-         - Creating a list
-            - Average Case: O(V+E)
-            - Worst Case: O(V^2)
-         - Adding a vertex: O(1)
-         - Removing a vertex: O(V+E)
+      - We will create a vector of the size equal to the number of unique vertices. This will store the number of times each of these vertices fall in the ‘shortest path’ between two vertices.
+      - Adjacency Matrix uses O(n^2) memory.
+3. Function Inputs:
+   - Djikstra: Node to begin traversal and a node to which we want to find the shortest path.
+   - Farthest Insertion: A starting node.
+4. Function Outputs: 
+   - Djikstra: Nodes returned from search, shortest path.
+   - Farthest Insertion: The shortest route that visits every node and returns to the starting node. 
+   - Function Efficiency: 
+      - Adjacency Matrix:
+         - Storage Space: O(|V|^2)
+         - Adding a vertex: O(|V|^2)
+         - Removing a vertex: O(|V|^2)
          - Adding an Edge: O(1)
-         - Removing an Edge: O(E)
-         - Querying for an edge: O(V)
-         - Finding neighbors: O(V)
-      - BFS: (V + E)
-      - Δ-stepping:
-         - Sequential ∆-stepping algorithm solves SSSP in O(n + m + d · L) time.
-            - Average time - O(log^(2)n)
-            - Average work - O(n+m)
-4. Timeline:
-   - April 1st: Finish timeline 
-   - April 10th: Finish function to read in data and construct graph 
-   - April 17th: Finish a functioning BFS algorithm
-   - April 24th: Finish implementation of Δ-stepping algorithm 
-   - May 1st: Do final debugging 
+         - Removing an Edge: O(1)
+         - Querying for an edge: O(1)
+   - BFS : (|V|+|E|)
+      - Traversal which finds all nodes at the current depth before moving on to the next level. 
+   - Dijkstra’s Algorithm O(nlog(n) + m)
+      - Finds the shortest path between two vertices in our weighted graph.
+   - Farthest Insertion O(n^2)
+      - Given a set of cities and distances between every pair of cities, the problem is to find the shortest possible route that visits every city exactly once and returns to the starting point.
+
+ 
+5. Timeline:
+   - April 10th: Finish function to read in data and construct graph.
+   - April 15th: Finish a functioning BFS algorithm. 
+   - April 24th: Implement Dijkstra
+   - May 1st: Traveling salesman problem. Do final debugging 
    - May 6th: Turn in project
 
 SIGNATURES:
@@ -53,4 +52,4 @@ X. Al Kaleshi (akales3)
 
 X. Marcin Malysa (mmalysa2)
 
-X. Manish Kumar 4 (mkumar41)
+X. Manish Kumar (mkumar41)
