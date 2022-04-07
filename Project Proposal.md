@@ -23,7 +23,6 @@ Data Set Used: <https://snap.stanford.edu/data/reachability.html>
       - We will be using a vector(Hash-Map) to store the number of times a vertex falls in the shortest path of two vertices.
 4. Function Outputs: 
    - Djikstra: Nodes returned from search, shortest path.
-   - Farthest Insertion: The shortest route that visits every node and returns to the starting node. 
    - Function Efficiency: 
       - Adjacency Matrix:
          - Storage Space: O(|V|^2)
