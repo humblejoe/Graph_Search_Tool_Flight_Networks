@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -5,7 +7,7 @@
 using namespace std;
 
 
-class fileReader{
+class file_Reader{
     public: 
     
     void readingTextFile();

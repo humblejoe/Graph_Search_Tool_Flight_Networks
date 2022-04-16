@@ -1,15 +1,15 @@
 #include <iostream>
-#pragma once
 #include <cstdlib>
-
+#include "file_read.h"
 #include <fstream>
 #include <string>
+#include <string.h>
 #include <vector>
 using namespace std;
 
 
-void fileReader::readingTextFile(){
-   std::ifstream in('file.txt');
+void file_Reader::readingTextFile(){
+   std::ifstream in("file.txt");
 
    std::string line;
    while(std::getline(in, line)){
@@ -19,26 +19,31 @@ void fileReader::readingTextFile(){
    }
    in.close();
    for(unsigned int i = 0; i < entire.size();i++){
-      char * token = strtok(entire[i]," ");
+      //This adds an entra space after the line/sentece.
+      std::string s= entire[i];
+      char * token = strtok(const_cast<char*>(s.c_str())," ");
       int count = 1;
-      //Stores the maximum node id.
-      int max;
 
       while(token!= NULL){
-         if(count==1){
-            source.push(token);
+         if(count%3 == 1){
+            source.push_back(stoi(token));
+            std::cout<<stoi(token)<<" "<<std::endl;
          }
-         else if(count == 2){
-            destination.push(token);
+         else if(count%3 == 2){
+            destination.push_back(stoi(token));
+            std::cout<<stoi(token)<<" "<<std::endl;
          }
          else{
-            edge.push(token);
+            edge.push_back(stoi(token));
+            std::cout<<stoi(token)<<" "<<std::endl;
          }
          token = strtok(NULL, " ");
          count++;
       }
       
    }
+
+
    
     
 }
