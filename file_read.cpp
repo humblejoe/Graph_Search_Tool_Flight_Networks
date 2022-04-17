@@ -6,6 +6,7 @@
 #include <string.h>
 #include <vector>
 #include <algorithm>
+#include <limits>
 using namespace std;
 
 
@@ -51,9 +52,19 @@ void file_Reader::readingTextFile(){
    adj.resize(size, std::vector<int>(size));
 
    //Making the adjacency matrix.
+   //Initializing all the edge weights of the matrix to 'infinity'.
+
+   int a = std::numeric_limits<int>::max();
+   for(unsigned int i = 0; i< adj.size(); i++){
+      for(unsigned int j = 0; j< adj.size(); j++){
+         adj[i][j] = a;
+      }
+   }
+
    for(unsigned int i = 0; i< edge.size(); i++){
       adj[source[i]][destination[i]] = std::abs(edge[i]);
    }
+   
 
    
    
