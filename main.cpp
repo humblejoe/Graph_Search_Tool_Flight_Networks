@@ -7,14 +7,14 @@
 int main()
 {
     fileReader test;
-    //file_Reader temp;
-    //temp.readingTextFile();
+    file_Reader temp;
+    temp.readingTextFile();
 
     std::cout << test.hello() << std::endl;
 
 
     
-    return 1;
+    return 0;
 }
 
 

@@ -27,21 +27,24 @@ void file_Reader::readingTextFile(){
       while(token!= NULL){
          if(count%3 == 1){
             source.push_back(stoi(token));
-            std::cout<<stoi(token)<<" "<<std::endl;
+            std::cout<<stoi(token)<<" ";
          }
          else if(count%3 == 2){
             destination.push_back(stoi(token));
-            std::cout<<stoi(token)<<" "<<std::endl;
+            std::cout<<stoi(token)<<" ";
          }
          else{
             edge.push_back(stoi(token));
-            std::cout<<stoi(token)<<" "<<std::endl;
+            std::cout<<stoi(token)<<" ";
          }
+         std::cout<<std::endl;
          token = strtok(NULL, " ");
          count++;
       }
       
    }
+
+   std::cout<<entire.size()<<"This is the number of edges"<<std::endl;
 
 
    
