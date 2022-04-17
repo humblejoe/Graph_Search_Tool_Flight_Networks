@@ -17,5 +17,8 @@ class file_Reader{
     std::vector<int> source;
     std::vector<int> destination;
     std::vector<int> edge;
+    //This vector stores the vectors in sorted order.
+    std::vector<int> vertices;
+    std::vector<std::vector<int>> adj;
 
 };
