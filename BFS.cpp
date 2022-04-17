@@ -1,24 +1,39 @@
 #include<queue>
 #include<vector>
 #include<stack>
+#include "BFS.h"
+#include "file_read.h"
 using namespace std;
 
-void BFS::traversal(){
+void bfs::traversal(){
     //We need to get the adjacency matrix from the file reader class and initialise it.
     //Along with adjacency matrix, we also need the vector with all the unique values of the s.
 
-    std::vector<int> v =file_read.source;
+    file_Reader f;
+    std::vector<int> vertices =f.vertices;
+    std::vector< std::vector<int>> adj = f.adj;
 
     //Inititalizing all the vertices to be not visited.
-    for(int i = 0; i<v.size(); i++){
+    for(unsigned int i = 0; i<vertices.size(); i++){
         visited[i] = 0;
     }
 
 
     std::queue<int> q;
-    q.push(vert[0]);
+    //Initializing the starting node for BFS. This is a general traversal algorithm.
+    q.push(vertices[0]);
     visited[0] = 1;
+    parent[0] = -1;
+
+    while(!q.empty()){
+        int curr = q.front();
+        q.pop();
+        for(unsigned int i = 0; i <vertices.size(); i++){
+            if(adj[curr][i] && !visited[i]){
+                q.push(vertices[i]);
+                parent[i] = curr;
+            }
+        }
+    }
     
-    //Initialising the starting node of bfs.
-    q.push()vert
 }

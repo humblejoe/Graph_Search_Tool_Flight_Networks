@@ -12,7 +12,6 @@ class file_Reader{
     
     void readingTextFile();
      
-    private:
     std::vector<string> entire;
     std::vector<int> source;
     std::vector<int> destination;
