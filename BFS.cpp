@@ -10,11 +10,11 @@ void bfs::traversal(){
     //Along with adjacency matrix, we also need the vector with all the unique values of the s.
 
     file_Reader f;
-    std::vector<int> vertices =f.vertices;
-    std::vector< std::vector<int>> adj = f.adj;
+    std::vector<int> vertices = f.getVertices();
+    std::vector< std::vector<int>> adj = f.getAdj();
 
     //Inititalizing all the vertices to be not visited.
-    for(unsigned int i = 0; i<vertices.size(); i++){
+    for(unsigned int i = 0; i< vertices.size(); i++){
         visited[i] = 0;
     }
 
