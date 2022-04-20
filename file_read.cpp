@@ -7,11 +7,18 @@
 #include <vector>
 #include <algorithm>
 #include <limits>
+#include <stdexcept>
 using namespace std;
 
-void file_Reader::readingTextFile()
+void file_Reader::readingTextFile(string input)
 {
-   std::ifstream in("file.txt");
+   std::ifstream in(input);
+
+   if (!in.is_open()) {
+      throw std::runtime_error("failed to open file");
+   } else {
+      std::cout << "file opened." << std::endl;
+   }
 
    std::string line;
    while (std::getline(in, line))
@@ -21,7 +28,9 @@ void file_Reader::readingTextFile()
          entire.push_back(line);
       }
    }
-   in.close();
+
+   // in.close();
+
    for (unsigned int i = 0; i < entire.size(); i++)
    {
       // This adds an entra space after the line/sentece.
@@ -54,7 +63,7 @@ void file_Reader::readingTextFile()
    vertices = source;
    std::sort(vertices.begin(), vertices.end());
    vertices.erase(std::unique(vertices.begin(), vertices.end()), vertices.end());
-   int size = vertices.size();
+   int size = vertices[(vertices.size() - 1)] + 1;
    adj.resize(size, std::vector<int>(size));
 
    // Making the adjacency matrix.
@@ -71,8 +80,12 @@ void file_Reader::readingTextFile()
 
    for (unsigned int i = 0; i < edge.size(); i++)
    {
+
       adj[source[i]][destination[i]] = std::abs(edge[i]);
+      
    }
+
+
 }
 
 int file_Reader::getSize()

@@ -9,7 +9,7 @@ using namespace std;
 class file_Reader
 {
 public:
-    void readingTextFile();
+    void readingTextFile(string input);
     int getSize();
     std::vector<int> getVertices();
     std::vector<int> getEdges();
