@@ -14,6 +14,7 @@ public:
     std::vector<int> getVertices();
     std::vector<int> getEdges();
     std::vector< std::vector<int>> getAdj();
+    std::vector< std::vector<pair<int, int>>> getAdjList();
 
 private:
     std::vector<string> entire;
@@ -24,4 +25,5 @@ private:
     // This vector stores the vectors in sorted order.
     std::vector<int> vertices;
     std::vector<std::vector<int>> adj;
+    std::vector<std::vector<pair<int, int>>> adjList;
 };
