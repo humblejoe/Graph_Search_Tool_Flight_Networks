@@ -17,7 +17,7 @@ class bfs{
     //This vector stores the predecessor or the parent of each of the node in bfs.
     vector<int> parent;
 
-    void traversal();
+    void traversal(int start, std::vector< std::vector<int>> adj);
 
 
 };

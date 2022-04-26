@@ -1,9 +1,12 @@
 #include "file_read.h"
 #include "Dijkstra.h"
+#include "BFS.h"
 #include <iostream>
 
 vector<vector<pair<int, int>>> FormAdjList()
 {
+    
+    
     // adjacency list.
     vector<vector<pair<int, int>>> adjList;
 
@@ -51,6 +54,8 @@ vector<vector<pair<int, int>>> FormAdjList()
 
 int main() 
     {
+    bfs s;
+    //s.traversal();
     cout << "Dijkstra Shortest Path Algorithm started.\n";
     dijkstra d;
     // Construct the adjacency list that represents our graph. 
@@ -64,6 +69,7 @@ int main()
     d.PrintShortestPath(dist, node);
     
     cout << "Algorithm Succesful.\n";
+
     
     return 0;
     }
