@@ -88,6 +88,11 @@ void file_Reader::readingTextFile(string input)
       adjList[source[i]].push_back(make_pair(destination[i], std::abs(edge[i])));
       
    }
+   //Initializing all the elements of the diagonal in the adjacency matrix to 0.
+
+   for(unsigned int i = 0; i< size; i++){
+      adj[i][i] = 0;
+   }
 
 
 
