@@ -1,6 +1,7 @@
 #include<queue>
 #include<vector>
 #include<stack>
+#include <limits>
 #include "BFS.h"
 #include "file_read.h"
 using namespace std;
@@ -10,13 +11,15 @@ void bfs::traversal(int start, std::vector< std::vector<int>> adj){
     //Along with adjacency matrix, we also need the vector with all the unique values of the s.
 
     
-    int size = adj.size();
+    unsigned int size = adj.size();
     std::vector<int> path;
 
     //Inititalizing all the vertices to be not visited.
     for(unsigned int i = 0; i< size; i++){
         visited[i] = 0;
     }
+
+    int a = std::numeric_limits<int>::max();
 
 
     std::queue<int> q;
@@ -35,7 +38,7 @@ void bfs::traversal(int start, std::vector< std::vector<int>> adj){
         path.push_back(curr);
         q.pop();
         for(unsigned int i = 0; i <size; i++){
-            if(adj[curr][i] && !visited[i]){
+            if(adj[curr][i]!=a && !visited[i]){
                 q.push(i);
                 parent[i] = curr;
             }
