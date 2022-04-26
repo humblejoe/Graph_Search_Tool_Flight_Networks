@@ -8,10 +8,10 @@ using namespace std;
 
 class dijkstra{
     public:
-    std::vector<int> shortestPath(std::vector<std::vector<int>> adj, int source, int destination);
-
+    vector<int> DijkstraSP(vector< vector<pair<int, int> > > &adjList, int &start);
+    void PrintShortestPath(vector<int> &dist, int &start);
     private:
-    vector<int> path;
-    vector<int> visited;
+    vector<int> dist;
+    vector<bool> visited;
 
 };

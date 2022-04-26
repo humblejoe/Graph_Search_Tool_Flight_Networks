@@ -29,7 +29,6 @@ void file_Reader::readingTextFile(string input)
       }
    }
 
-   // in.close();
 
    for (unsigned int i = 0; i < entire.size(); i++)
    {
