@@ -62,7 +62,7 @@ void file_Reader::readingTextFile(string input)
    vertices = source;
    std::sort(vertices.begin(), vertices.end());
    vertices.erase(std::unique(vertices.begin(), vertices.end()), vertices.end());
-   int size = vertices[(vertices.size() - 1)] + 1;
+   unsigned int size = vertices[(vertices.size() - 1)] + 1;
    adj.resize(size, std::vector<int>(size));
 
    // Making the adjacency matrix.

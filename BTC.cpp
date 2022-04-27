@@ -48,20 +48,20 @@ int btc::centrality(std::vector<std::vector<int>> adj){
 
     occur.resize(size);
     //Initializing all the occurences to 0.
-    for(unsigned int i = 0; i, size; i++){
+    for(unsigned int i = 0; i< size; i++){
         occur[i] = 0;
     }
 
     //Calculating the shortest path from each vertext to another veertex.
     for(unsigned i = 0; i < size; i++){
         for(unsigned j = 1; j< size; j++){
-            if(intermediate[i][j]=-1){
+            if(intermediate[i][j]==-1){
                 continue;
             }
             else{
                 //Two calculate the betweenness centrality we are only taking the intermediate vertices not the source and destination.
                 unsigned int temp = i;
-                while(temp=j){
+                while(temp!=j){
                     occur[temp]++;
                     temp = intermediate[temp][j];
                 }

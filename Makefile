@@ -4,7 +4,7 @@ TEST = test
 
 #Add all object files needed for compiling:
 EXE_OBJ = main.o 
-OBJS = main.o file_read.o BFS.o Dijkstra.o
+OBJS = main.o file_read.o BFS.o Dijkstra.o BTC.o
 
 #Generated files
 
