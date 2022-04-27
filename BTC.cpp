@@ -1,4 +1,5 @@
 #include "BTC.h"
+#include <vector>
 #include <algorithm>
 
 int btc::centrality(std::vector<std::vector<int>> adj){
@@ -58,8 +59,9 @@ int btc::centrality(std::vector<std::vector<int>> adj){
                 continue;
             }
             else{
-                unsigned int temp = intermediate[i][j];
-                while(intermediate[temp][j]!=j){
+                //Two calculate the betweenness centrality we are only taking the intermediate vertices not the source and destination.
+                unsigned int temp = i;
+                while(temp=j){
                     occur[temp]++;
                     temp = intermediate[temp][j];
                 }
