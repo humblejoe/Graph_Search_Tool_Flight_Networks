@@ -54,12 +54,16 @@ vector<vector<pair<int, int>>> FormAdjList()
 
 int main() 
     {
+    file_Reader f;
+    f.readingTextFile("file.txt");
     bfs s;
     //s.traversal();
     cout << "Dijkstra Shortest Path Algorithm started.\n";
     dijkstra d;
+
+
     // Construct the adjacency list that represents our graph. 
-    vector< vector<pair<int, int> > > adjList = FormAdjList();
+    vector< vector<pair<int, int> > > adjList = f.getAdjList();
     
     // Get a list of shortest path distances for node 0.
     int node = 0;

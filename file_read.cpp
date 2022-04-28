@@ -76,6 +76,7 @@ void file_Reader::readingTextFile(string input)
          adj[i][j] = a;
       }
    }
+   
    adjList.resize(size);
 
    for (unsigned int i = 0; i < edge.size(); i++)
@@ -85,14 +86,24 @@ void file_Reader::readingTextFile(string input)
       adj[source[i]][destination[i]] = std::abs(edge[i]);
       
       //Storing value in the adjacenct list.
+   
+      //std::cout<<source[i]<<" "<<destination[i]<<" "<<edge[i]<<std::endl;
       adjList[source[i]].push_back(make_pair(destination[i], std::abs(edge[i])));
       
+      
    }
+   
    //Initializing all the elements of the diagonal in the adjacency matrix to 0.
 
    for(unsigned int i = 0; i< size; i++){
       adj[i][i] = 0;
    }
+   for(unsigned int i =0; i< adjList.size(); i++){
+      for(unsigned int j = 0; j< adjList[i].size(); j++){
+        // std::cout<<i<<" "<<adjList[i][j].first<<" "<<adjList[i][j].second<<std::endl;
+      }
+   }
+
 
 
 
