@@ -43,6 +43,7 @@ void bfs::traversal(int start, std::vector< std::vector<int>> adj){
     //std::cout<<"printing things before the while loop"<<std::endl;
     while(!q.empty()){
         int curr = q.front();
+        std::cout<<curr<<" ";
         //Adding to the path.
         path.push_back(curr);
         q.pop();
@@ -50,14 +51,11 @@ void bfs::traversal(int start, std::vector< std::vector<int>> adj){
             if(adj[curr][i]!=a && !visited[i]){
                 q.push(i);
                 parent[i] = curr;
+                visited[i] = 1;
             }
         }
     }
 
-    std::cout<<"Before priniting the path"<<std::endl;
-    //Printing the path
-    for(unsigned int i =0; i< size; i++){
-        std::cout<<path[i]<<" ";
-    }
+    
     
 }
