@@ -13,6 +13,10 @@ void bfs::traversal(int start, std::vector< std::vector<int>> adj){
     
     unsigned int size = adj.size();
     std::vector<int> path;
+    path.resize(size);
+    visited.resize(size);
+    parent.resize(size);
+    
 
     //Inititalizing all the vertices to be not visited.
     for(unsigned int i = 0; i< size; i++){
@@ -20,6 +24,10 @@ void bfs::traversal(int start, std::vector< std::vector<int>> adj){
     }
 
     int a = std::numeric_limits<int>::max();
+    for(unsigned int i = 0; i< size; i++){
+        adj[i][i] = a;
+    }
+
 
 
     std::queue<int> q;
@@ -28,10 +36,11 @@ void bfs::traversal(int start, std::vector< std::vector<int>> adj){
 
     //Initializing the path.
     path.push_back(start);
+    //std::cout<<adj.size()<<"Pritning the size of the adjacency matrix"<<std::endl;
 
     visited[start] = 1;
     parent[start] = -1;
-    std::cout<<"printing things before the while loop"<<std::endl;
+    //std::cout<<"printing things before the while loop"<<std::endl;
     while(!q.empty()){
         int curr = q.front();
         //Adding to the path.
@@ -45,8 +54,9 @@ void bfs::traversal(int start, std::vector< std::vector<int>> adj){
         }
     }
 
+    std::cout<<"Before priniting the path"<<std::endl;
     //Printing the path
-    for(unsigned int i =0; i< path.size(); i++){
+    for(unsigned int i =0; i< size; i++){
         std::cout<<path[i]<<" ";
     }
     

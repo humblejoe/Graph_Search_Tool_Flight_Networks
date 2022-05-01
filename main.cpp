@@ -60,6 +60,9 @@ int main()
     //s.traversal();
     cout << "Dijkstra Shortest Path Algorithm started.\n";
     dijkstra d;
+    bfs b;
+    b.traversal(0, f.getAdj());
+
 
 
     // Construct the adjacency list that represents our graph. 
