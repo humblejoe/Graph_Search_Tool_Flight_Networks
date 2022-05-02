@@ -22,3 +22,19 @@ Week of April 11 and April 18: Goals for the week: Pre-process data in order to 
 - Plans for next week:
     - Complete BFS (which is partially implemented) and write test cases for BFS.
     - Complete Dijkstra’s algorithm implementation.
+
+Week of April 18 and April 25:
+- Goals for the week: Implement Dijkstra's and Betweeness centrality.
+    - Specific tasks:
+        - Charles: Develop test cases and start working on the report.
+        - Marcin: Create test cases for BFS and Dijkstra's.
+        - Al: Complete Dijkstra's with proper input and output.
+    - Problems encountered:
+        - While working on Dijkstra's, we were encountering seg faults while converting it into a list.
+    - Plans for the next week:
+        - Complete the report and read me files.
+        - Create the test cases for bfs, Dijkstra's and betweenness centrality.
+        - Create the video for the project and submit it.
+
+
+
