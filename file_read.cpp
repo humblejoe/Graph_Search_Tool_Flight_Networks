@@ -16,9 +16,11 @@ void file_Reader::readingTextFile(string input)
 
    if (!in.is_open()) {
       throw std::runtime_error("failed to open file");
-   } else {
-      std::cout << "file opened." << std::endl;
-   }
+   } 
+   
+   // else {
+   //    std::cout << "file opened." << std::endl;
+   // }
 
    std::string line;
    while (std::getline(in, line))

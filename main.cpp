@@ -55,27 +55,40 @@ vector<vector<pair<int, int>>> FormAdjList()
 int main() 
     {
     file_Reader f;
-    f.readingTextFile("file.txt");
+    f.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/file.txt");
+    
     bfs s;
+
+    std::vector<int> returnPath = s.traversal(0, f.getAdj());
+
+    for (size_t i = 0; i < returnPath.size(); i++) {
+        std::cout << returnPath[i] << ", ";
+    }
+    std::cout << std::endl;
+
+
+
     //s.traversal();
-    cout << "Dijkstra Shortest Path Algorithm started.\n";
-    dijkstra d;
-    bfs b;
-    b.traversal(0, f.getAdj());
+    // cout << "Dijkstra Shortest Path Algorithm started.\n";
+    // dijkstra d;
+    // bfs b;
+    // b.traversal(0, f.getAdj());
 
 
 
     // Construct the adjacency list that represents our graph. 
-    vector< vector<pair<int, int> > > adjList = f.getAdjList();
+    // vector< vector<pair<int, int> > > adjList = f.getAdjList();
     
     // Get a list of shortest path distances for node 0.
-    int node = 0;
-    vector<int> dist = d.DijkstraSP(adjList, node);
+    // int node = 0;
+    // vector<int> dist = d.DijkstraSP(adjList, node);
     
     // Print the list.
-    d.PrintShortestPath(dist, node);
+    // d.PrintShortestPath(dist, node);
     
-    cout << "Algorithm Succesful.\n";
+    // cout << "Algorithm Succesful.\n";
+
+
 
     
     return 0;

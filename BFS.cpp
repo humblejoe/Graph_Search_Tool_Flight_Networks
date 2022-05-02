@@ -6,14 +6,13 @@
 #include "file_read.h"
 using namespace std;
 
-void bfs::traversal(int start, std::vector< std::vector<int>> adj){
+std::vector<int> bfs::traversal(int start, std::vector< std::vector<int>> adj){
     //We need to get the adjacency matrix from the file reader class and initialise it.
     //Along with adjacency matrix, we also need the vector with all the unique values of the s.
 
     
     unsigned int size = adj.size();
     std::vector<int> path;
-    path.resize(size);
     visited.resize(size);
     parent.resize(size);
     
@@ -34,8 +33,6 @@ void bfs::traversal(int start, std::vector< std::vector<int>> adj){
     //Initializing the starting node for BFS. This is a general traversal algorithm.
     q.push(start);
 
-    //Initializing the path.
-    path.push_back(start);
     //std::cout<<adj.size()<<"Pritning the size of the adjacency matrix"<<std::endl;
 
     visited[start] = 1;
@@ -43,7 +40,7 @@ void bfs::traversal(int start, std::vector< std::vector<int>> adj){
     //std::cout<<"printing things before the while loop"<<std::endl;
     while(!q.empty()){
         int curr = q.front();
-        std::cout<<curr<<" ";
+
         //Adding to the path.
         path.push_back(curr);
         q.pop();
@@ -56,6 +53,6 @@ void bfs::traversal(int start, std::vector< std::vector<int>> adj){
         }
     }
 
-    
+    return path;
     
 }
