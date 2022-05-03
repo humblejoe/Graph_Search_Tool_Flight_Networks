@@ -62,4 +62,44 @@ TEST_CASE("traversal_small_4_start")
     REQUIRE(returnPath == comparePath);
 }
 
+TEST_CASE("traversal_medium_0_start")
+{
+    file_Reader test;
+    test.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testgraph_medium.txt");
 
+    bfs b;
+
+    std::vector<int> returnPath = b.traversal(0, test.getAdj());
+
+    std::vector<int> comparePath = {0, 1, 2, 3, 4, 5, 6, 7};
+
+    REQUIRE(returnPath == comparePath);
+}
+
+TEST_CASE("traversal_medium_7_start")
+{
+    file_Reader test;
+    test.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testgraph_medium.txt");
+
+    bfs b;
+
+    std::vector<int> returnPath = b.traversal(7, test.getAdj());
+
+    std::vector<int> comparePath = {7, 5, 6, 1, 2, 3, 4, 0};
+
+    REQUIRE(returnPath == comparePath);
+}
+
+TEST_CASE("traversal_medium_2_start")
+{
+    file_Reader test;
+    test.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testgraph_medium.txt");
+
+    bfs b;
+
+    std::vector<int> returnPath = b.traversal(2, test.getAdj());
+
+    std::vector<int> comparePath = {2, 0, 5, 1, 3, 4, 7, 6};
+
+    REQUIRE(returnPath == comparePath);
+}

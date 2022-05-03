@@ -1,6 +1,7 @@
 #include "file_read.h"
 #include "Dijkstra.h"
 #include "BFS.h"
+#include "BTC.h"
 #include <iostream>
 
 vector<vector<pair<int, int>>> FormAdjList()
@@ -55,16 +56,22 @@ vector<vector<pair<int, int>>> FormAdjList()
 int main() 
     {
     file_Reader f;
-    f.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/file.txt");
+    f.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testDataCleaning.txt");
     
-    bfs s;
+    // bfs s;
 
-    std::vector<int> returnPath = s.traversal(0, f.getAdj());
+    // std::vector<int> returnPath = s.traversal(0, f.getAdj());
 
-    for (size_t i = 0; i < returnPath.size(); i++) {
-        std::cout << returnPath[i] << ", ";
-    }
-    std::cout << std::endl;
+    // for (size_t i = 0; i < returnPath.size(); i++) {
+    //     std::cout << returnPath[i] << ", ";
+    // }
+    // std::cout << std::endl;
+
+    btc test;
+
+    int central = test.centrality(f.getAdj());
+
+    std::cout << central << std::endl;
 
 
 

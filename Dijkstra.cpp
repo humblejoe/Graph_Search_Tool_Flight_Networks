@@ -9,7 +9,7 @@ using namespace std;
 
 vector<int> dijkstra::DijkstraSP(vector< vector<pair<int, int> > > &adjList, int &start)
     {
-    cout << "\nGetting the shortest path from " << start << " to all other nodes.\n";
+    // cout << "\nGetting the shortest path from " << start << " to all other nodes.\n";
     
     
     // Initialize all source->vertex as infinite.
