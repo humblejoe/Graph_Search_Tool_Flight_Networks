@@ -48,6 +48,7 @@ $(OBJS_DIR):
 	@mkdir -p $(OBJS_DIR)/cs225/catch
 	@mkdir -p $(OBJS_DIR)/cs225/lodepng
 	@mkdir -p $(OBJS_DIR)/tests
+	@mkdir -p $(OBJS_DIR)/src
 # mp_traversal specific
 	@mkdir -p $(OBJS_DIR)/imageTraversal
 	@mkdir -p $(OBJS_DIR)/colorPicker
