@@ -56,3 +56,13 @@ std::vector<int> bfs::traversal(int start, std::vector< std::vector<int>> adj){
     return path;
     
 }
+void bfs::PrintShortestPath(vector<vector<int>> &dist, int &start)
+{
+    cout << "\nPrinting the shortest paths for node " << start << ".\n";
+    for (unsigned long i = 0; i < dist.size(); i++)
+    {
+        for (unsigned long j = 1; dist[i].size(); j++) {
+            cout << "The distance from node " << start << " to node " << i << " is: " << dist[i][0] << endl;   
+        }
+    }
+}

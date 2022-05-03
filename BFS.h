@@ -5,7 +5,7 @@
 #include "file_read.h"
 using namespace std;
 
-class bfs{
+class bfs : public file_Reader{
     public:
     //This is the adjacency matrix.
     vector<vector<int>> adj;
@@ -18,6 +18,5 @@ class bfs{
     vector<int> parent;
 
     std::vector<int> traversal(int start, std::vector< std::vector<int>> adj);
-
-
+    void PrintShortestPath(vector<vector<int>> &dist, int &start);
 };
