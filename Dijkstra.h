@@ -6,12 +6,12 @@
 #include <queue>
 using namespace std;
 
-class dijkstra{
+class dijkstra : public file_Reader {
     public:
     vector<int> DijkstraSP(vector< vector<pair<int, int> > > &adjList, int &start);
     void PrintShortestPath(vector<int> &dist, int &start);
     private:
     vector<int> dist;
     vector<bool> visited;
-
+    priority_queue<pair<int, int>, vector<pair<int, int> >, greater<pair<int, int>>> pq;
 };
