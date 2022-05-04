@@ -8,42 +8,37 @@ using namespace std;
 
 int main()
 {
+    vector<string> Algs = {"BFS", "Dijkstra", "Betweeness Centrality"};
+    std::cout << FRED("Welcome to the SegFools Final Project. Please enter the desired graph in 'custom.txt': (Starting node), (Destination node), (Edge weight) ") << std::endl;
 
-    // std::cout << FRED("Welcome to the SegFools Final Project. Please enter a traversal to do on the Airline travel reachability network Dataset: ") << std::endl;
-    // std::cout << FCYN("BFS, Dijkstra, Betweeness Centrality ") << std::endl;
-    // std::cout << "Enter here: ";
-    // std::string bfs_input;
-    // std::cin >> bfs_input;
-    // if (bfs_input == "BFS")
-    // {
-    //     file_Reader f;
-    //     f.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testDataCleaning.txt");
-    //     bfs bfs_graph_traversal;
-    //     vector<vector<int>> adjM = f.getAdj();
-    //     int node = 0;
-    //     bfs_graph_traversal.PrintShortestPath(adjM, node);
-    // }
+    std::cout << endl;
 
-    // // btc test;
-
-    // // int central = test.centrality(f.getAdj());
-
-    // // std::cout << central << std::endl;
-    file_Reader f;
-    f.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testgraph_medium.txt");
-    cout << "Dijkstra Shortest Path Algorithm started.\n";
-    dijkstra d;
-
-    //Construct the adjacency list that represents our graph.
-    vector< vector<pair<int, int> > > adjList = f.getAdjList();
-
-    //Get a list of shortest path distances for node 0.
+    file_Reader custom;
+    custom.readingTextFile("/workspaces/CPP/CS225/calewis5-mmalysa2-akales3-mkumar41/custom.txt");
+    bfs bfs_graph_traversal;
+    vector<vector<int>> adjM = custom.getAdj();
     int node = 0;
-    vector<int> dist = d.DijkstraSP(adjList, node);
-    //Print the list.
-    d.PrintShortestPath(dist, node);
+    std::cout << "Please enter the starting node for bfs: ";
+    std::cin >> node;
+    bfs_graph_traversal.PrintShortestPath(adjM, node);
+    std::cout<<endl;
 
-    cout << "Algorithm Succesful.\n";
+    
+    std::cout << "Enter the staring node for Dijkstra: ";
+    std::cin >> node;
+
+    dijkstra d;
+    vector<vector<pair<int, int>>> adjList = custom.getAdjList();
+
+
+    vector<int> dist = d.DijkstraSP(adjList, node);
+    d.PrintShortestPath(dist, node);
+    std::cout<<endl;
+
+    btc test;
+    int central = test.centrality(custom.getAdj());
+    std::cout<<"The most central node in this graph is: "<<central<<std::endl;
+
 
     return 0;
 }
