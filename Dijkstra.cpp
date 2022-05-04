@@ -25,8 +25,10 @@ vector<int> dijkstra::DijkstraSP(vector< vector<pair<int, int> > > &adjList, int
     // Add source to pq, where distance is 0.
     pq.push(make_pair(start, 0));
     dist[start] = 0;
-    
-    
+   
+    parent.resize(adjList.size());
+    parent[start] = -1;
+
     while(pq.empty() == false)
         {
         // Get min distance vertex from pq.
@@ -44,21 +46,33 @@ vector<int> dijkstra::DijkstraSP(vector< vector<pair<int, int> > > &adjList, int
                 {
                 // Update the distance of v.
                 dist[v] = dist[u] + weight;
+                parent[v] = u;
                 // Insert v into the pq. 
                 pq.push(make_pair(v, dist[v]));
                 }
             }
+
         }
-    
     return dist;
     }
-
 void dijkstra::PrintShortestPath(vector<int> &dist, int &start)
 {
     cout << "\nPrinting the shortest paths for node " << start << ".\n";
     for (unsigned long i = 0; i < dist.size(); i++)
     {
-        cout << "The distance from node " << start << " to node " << i << " is: " << dist[i] << endl;
+        cout << "The distance from node " << start << " to node " << i << " is: " << dist[i] << "\t Path Taken: ";
+        PrintPath(parent, i);
+        std::cout << endl;
     }
+    
+}
+
+void dijkstra::PrintPath(vector<int> par, int u) {
+    if (par[u] == -1) {
+        std::cout << u << " ";
+        return;
+    }
+    PrintPath(parent, parent[u]);
+    std::cout << u << " ";
 }
     
