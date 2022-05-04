@@ -15,7 +15,6 @@ public:
     std::vector<int> getEdges();
     std::vector< std::vector<int>> getAdj();
     std::vector< std::vector<pair<int, int>>> getAdjList();
-
 private:
     std::vector<string> entire;
     std::vector<int> source;

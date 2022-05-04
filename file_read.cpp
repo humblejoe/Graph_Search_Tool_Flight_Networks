@@ -14,10 +14,11 @@ void file_Reader::readingTextFile(string input)
 {
    std::ifstream in(input);
 
-   if (!in.is_open()) {
+   if (!in.is_open())
+   {
       throw std::runtime_error("failed to open file");
-   } 
-   
+   }
+
    // else {
    //    std::cout << "file opened." << std::endl;
    // }
@@ -30,7 +31,6 @@ void file_Reader::readingTextFile(string input)
          entire.push_back(line);
       }
    }
-
 
    for (unsigned int i = 0; i < entire.size(); i++)
    {
@@ -78,37 +78,34 @@ void file_Reader::readingTextFile(string input)
          adj[i][j] = a;
       }
    }
-   
+
    adjList.resize(size);
 
    for (unsigned int i = 0; i < edge.size(); i++)
    {
 
-      //Storing value in the adjacency matrix.
+      // Storing value in the adjacency matrix.
       adj[source[i]][destination[i]] = std::abs(edge[i]);
-      
-      //Storing value in the adjacenct list.
-   
-      //std::cout<<source[i]<<" "<<destination[i]<<" "<<edge[i]<<std::endl;
-      adjList[source[i]].push_back(make_pair(destination[i], std::abs(edge[i])));
-      
-      
-   }
-   
-   //Initializing all the elements of the diagonal in the adjacency matrix to 0.
 
-   for(unsigned int i = 0; i< size; i++){
+      // Storing value in the adjacenct list.
+
+      // std::cout<<source[i]<<" "<<destination[i]<<" "<<edge[i]<<std::endl;
+      adjList[source[i]].push_back(make_pair(destination[i], std::abs(edge[i])));
+   }
+
+   // Initializing all the elements of the diagonal in the adjacency matrix to 0.
+
+   for (unsigned int i = 0; i < size; i++)
+   {
       adj[i][i] = 0;
    }
-   for(unsigned int i =0; i< adjList.size(); i++){
-      for(unsigned int j = 0; j< adjList[i].size(); j++){
-        // std::cout<<i<<" "<<adjList[i][j].first<<" "<<adjList[i][j].second<<std::endl;
+   for (unsigned int i = 0; i < adjList.size(); i++)
+   {
+      for (unsigned int j = 0; j < adjList[i].size(); j++)
+      {
+         // std::cout<<i<<" "<<adjList[i][j].first<<" "<<adjList[i][j].second<<std::endl;
       }
    }
-
-
-
-
 }
 
 int file_Reader::getSize()
@@ -126,13 +123,12 @@ std::vector<int> file_Reader::getEdges()
    return edge;
 }
 
-std::vector< std::vector<int>> file_Reader::getAdj()
+std::vector<std::vector<int>> file_Reader::getAdj()
 {
    return adj;
 }
 
-
-std::vector<std::vector< pair<int, int>>> file_Reader::getAdjList()
+std::vector<std::vector<pair<int, int>>> file_Reader::getAdjList()
 {
    return adjList;
 }

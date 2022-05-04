@@ -5,6 +5,7 @@
 #include <queue>
 #include "Dijkstra.h"
 #include<climits>
+#include "colors.h"
 using namespace std;
 
 vector<int> dijkstra::DijkstraSP(vector< vector<pair<int, int> > > &adjList, int &start)
@@ -57,10 +58,10 @@ vector<int> dijkstra::DijkstraSP(vector< vector<pair<int, int> > > &adjList, int
     }
 void dijkstra::PrintShortestPath(vector<int> &dist, int &start)
 {
-    cout << "\nPrinting the shortest paths for node " << start << ".\n";
+    cout << FCYN("\nPrinting the shortest paths for node ") << start << ".\n";
     for (unsigned long i = 0; i < dist.size(); i++)
     {
-        cout << "The distance from node " << start << " to node " << i << " is: " << dist[i] << "\t Path Taken: ";
+        cout << FGRN("The distance from node ") << start << FRED(" to node ") << i << FGRN(" is: ") << dist[i] << FRED("\t Path Taken: ");
         PrintPath(parent, i);
         std::cout << endl;
     }
