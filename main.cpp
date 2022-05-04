@@ -17,27 +17,24 @@ int main()
     bfs bfs_graph_traversal;
     vector<vector<int>> adjM = custom.getAdj();
     int node = 0;
-    std::cout << FYEL("Please enter the starting node for bfs: ");
+    std::cout << FYEL("Please enter the starting node for BFS: ");
     std::cin >> node;
     bfs_graph_traversal.PrintShortestPath(adjM, node);
-    std::cout<<endl;
+    std::cout << endl;
 
-    
     std::cout << FGRN("Enter the staring node for Dijkstra: ");
     std::cin >> node;
 
     dijkstra d;
     vector<vector<pair<int, int>>> adjList = custom.getAdjList();
 
-
     vector<int> dist = d.DijkstraSP(adjList, node);
     d.PrintShortestPath(dist, node);
-    std::cout<<endl;
+    std::cout << endl;
 
     btc test;
     int central = test.centrality(custom.getAdj());
-    std::cout<< FMAG("The most central node in this graph is: ")<<central<<std::endl;
-
+    std::cout << FMAG("The most central node in this graph is: ") << central << std::endl;
 
     return 0;
 }
