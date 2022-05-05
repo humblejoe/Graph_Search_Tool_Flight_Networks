@@ -13,12 +13,13 @@ int main()
     std::cout << endl;
 
     file_Reader custom;
-    custom.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/custom.txt");
+    custom.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/file.txt");
     bfs bfs_graph_traversal;
     vector<vector<int>> adjM = custom.getAdj();
     int node = 0;
     std::cout << FYEL("Please enter the starting node for BFS: ");
     std::cin >> node;
+    if (node < (int(custom.getAdj().size()) - 1) && node > 0) {
     bfs_graph_traversal.PrintShortestPath(adjM, node);
     std::cout << endl;
 
@@ -35,6 +36,8 @@ int main()
     btc test;
     int central = test.centrality(custom.getAdj());
     std::cout << FMAG("The most central node in this graph is: ") << central << std::endl;
-
+    } else {
+        throw std::runtime_error("Node not present in graph.");
+    }
     return 0;
 }
