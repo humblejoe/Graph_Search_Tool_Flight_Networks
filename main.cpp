@@ -19,7 +19,7 @@ int main()
     int node = 0;
     std::cout << FYEL("Please enter the starting node for BFS: ");
     std::cin >> node;
-    if (node < (int(custom.getAdj().size()) - 1) && node > 0) {
+    if (node <= (int(custom.getAdj().size()) - 1) && node >= 0) {
     bfs_graph_traversal.PrintShortestPath(adjM, node);
     std::cout << endl;
 
