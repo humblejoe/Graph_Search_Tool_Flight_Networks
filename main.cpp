@@ -13,7 +13,7 @@ int main()
     std::cout << endl;
 
     file_Reader custom;
-    custom.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/custom.txt");
+    custom.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/file.txt");
     bfs bfs_graph_traversal;
     vector<vector<int>> adjM = custom.getAdj();
     int node = 0;
