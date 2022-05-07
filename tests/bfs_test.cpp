@@ -1,7 +1,7 @@
 #include "../cs225/catch/catch.hpp"
 
-#include "/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/file_read.h"
-#include "/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/BFS.h"
+#include "../file_read.h"
+#include "../BFS.h"
 
 #include <iostream>
 #include <fstream>
@@ -13,7 +13,7 @@ using namespace std;
 TEST_CASE("traversal_size_check_small")
 {
     file_Reader test;
-    test.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testDataCleaning.txt");
+    test.readingTextFile("tests/testDataCleaning.txt");
 
     bfs b;
 
@@ -25,7 +25,7 @@ TEST_CASE("traversal_size_check_small")
 TEST_CASE("traversal_size_check_large")
 {
     file_Reader test;
-    test.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/file.txt");
+    test.readingTextFile("file.txt");
 
     bfs b;
 
@@ -37,7 +37,7 @@ TEST_CASE("traversal_size_check_large")
 TEST_CASE("traversal_small_0_start")
 {
     file_Reader test;
-    test.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testDataCleaning.txt");
+    test.readingTextFile("tests/testDataCleaning.txt");
 
     bfs b;
 
@@ -51,7 +51,7 @@ TEST_CASE("traversal_small_0_start")
 TEST_CASE("traversal_small_4_start")
 {
     file_Reader test;
-    test.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testDataCleaning.txt");
+    test.readingTextFile("tests/testDataCleaning.txt");
 
     bfs b;
 
@@ -65,7 +65,7 @@ TEST_CASE("traversal_small_4_start")
 TEST_CASE("traversal_medium_0_start")
 {
     file_Reader test;
-    test.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testgraph_medium.txt");
+    test.readingTextFile("tests/testgraph_medium.txt");
 
     bfs b;
 
@@ -79,7 +79,7 @@ TEST_CASE("traversal_medium_0_start")
 TEST_CASE("traversal_medium_7_start")
 {
     file_Reader test;
-    test.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testgraph_medium.txt");
+    test.readingTextFile("tests/testgraph_medium.txt");
 
     bfs b;
 
@@ -93,7 +93,7 @@ TEST_CASE("traversal_medium_7_start")
 TEST_CASE("traversal_medium_2_start")
 {
     file_Reader test;
-    test.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testgraph_medium.txt");
+    test.readingTextFile("tests/testgraph_medium.txt");
 
     bfs b;
 

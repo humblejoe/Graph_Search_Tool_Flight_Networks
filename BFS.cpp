@@ -13,6 +13,7 @@ std::vector<int> bfs::traversal(int start, std::vector<std::vector<int>> adj)
     // We need to get the adjacency matrix from the file reader class and initialise it.
     // Along with adjacency matrix, we also need the vector with all the unique values of the s.
 
+    
     unsigned int size = adj.size();
     std::vector<int> path;
     visited.resize(size);

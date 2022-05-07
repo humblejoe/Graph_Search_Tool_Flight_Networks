@@ -1,7 +1,7 @@
 #include "../cs225/catch/catch.hpp"
 
-#include "/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/file_read.h"
-#include "/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/BTC.h"
+#include "../file_read.h"
+#include "../BTC.h"
 
 #include <iostream>
 #include <fstream>
@@ -13,7 +13,7 @@ using namespace std;
 TEST_CASE("btc_test_small")
 {
     file_Reader test;
-    test.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testDataCleaning.txt");
+    test.readingTextFile("tests/testDataCleaning.txt");
 
     btc b;
 
@@ -25,7 +25,7 @@ TEST_CASE("btc_test_small")
 TEST_CASE("btc_test_medium")
 {
     file_Reader test;
-    test.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testDataCleaning.txt");
+    test.readingTextFile("tests/testDataCleaning.txt");
 
     btc b;
 
@@ -37,7 +37,7 @@ TEST_CASE("btc_test_medium")
 TEST_CASE("btc_test_btcgraph")
 {
     file_Reader test;
-    test.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/btcgraph.txt");
+    test.readingTextFile("tests/btcgraph.txt");
 
     btc b;
 

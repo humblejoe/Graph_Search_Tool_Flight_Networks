@@ -58,9 +58,22 @@ void file_Reader::readingTextFile(string input)
    // in sorted order to get the final list of vertices.
 
    vertices = source;
+   
    std::sort(vertices.begin(), vertices.end());
    vertices.erase(std::unique(vertices.begin(), vertices.end()), vertices.end());
+
+
    unsigned int size = vertices[(vertices.size() - 1)] + 1;
+
+
+   vertices = destination;
+
+   std::sort(vertices.begin(), vertices.end());
+   vertices.erase(std::unique(vertices.begin(), vertices.end()), vertices.end());
+   if(vertices[vertices.size()-1] + 1 > (int)size){
+      size = vertices[vertices.size()- 1] + 1;
+   }
+
    adj.resize(size, std::vector<int>(size));
 
    // Making the adjacency matrix.
@@ -84,8 +97,6 @@ void file_Reader::readingTextFile(string input)
       adj[source[i]][destination[i]] = std::abs(edge[i]);
 
       // Storing value in the adjacenct list.
-
-      // std::cout<<source[i]<<" "<<destination[i]<<" "<<edge[i]<<std::endl;
       adjList[source[i]].push_back(make_pair(destination[i], std::abs(edge[i])));
    }
 
@@ -114,6 +125,7 @@ std::vector<int> file_Reader::getEdges()
 
 std::vector<std::vector<int>> file_Reader::getAdj()
 {
+   
    return adj;
 }
 

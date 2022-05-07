@@ -1,7 +1,7 @@
 #include "../cs225/catch/catch.hpp"
 
-#include "/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/file_read.h"
-#include "/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/Dijkstra.h"
+#include "../file_read.h"
+#include "../Dijkstra.h"
 
 #include <iostream>
 #include <fstream>
@@ -13,7 +13,7 @@ using namespace std;
 TEST_CASE("dijkstra_test_small_1")
 {
     file_Reader test;
-    test.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testDataCleaning.txt");
+    test.readingTextFile("tests/testDataCleaning.txt");
 
     dijkstra d;
 
@@ -29,7 +29,7 @@ TEST_CASE("dijkstra_test_small_1")
 TEST_CASE("dijkstra_test_small_2")
 {
     file_Reader test;
-    test.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testDataCleaning.txt");
+    test.readingTextFile("tests/testDataCleaning.txt");
 
     dijkstra d;
 
@@ -45,7 +45,7 @@ TEST_CASE("dijkstra_test_small_2")
 TEST_CASE("dijkstra_test_small_3")
 {
     file_Reader test;
-    test.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testDataCleaning.txt");
+    test.readingTextFile("tests/testDataCleaning.txt");
 
     dijkstra d;
 
@@ -61,7 +61,7 @@ TEST_CASE("dijkstra_test_small_3")
 TEST_CASE("dijkstra_test_medium_1")
 {
     file_Reader test;
-    test.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testgraph_medium.txt");
+    test.readingTextFile("tests/testgraph_medium.txt");
 
     dijkstra d;
 
@@ -77,7 +77,7 @@ TEST_CASE("dijkstra_test_medium_1")
 TEST_CASE("dijkstra_test_medium_2")
 {
     file_Reader test;
-    test.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testgraph_medium.txt");
+    test.readingTextFile("tests/testgraph_medium.txt");
 
     dijkstra d;
 
@@ -93,7 +93,7 @@ TEST_CASE("dijkstra_test_medium_2")
 TEST_CASE("dijkstra_test_medium_3")
 {
     file_Reader test;
-    test.readingTextFile("/workspaces/CS225/cs225git/calewis5-mmalysa2-akales3-mkumar41/tests/testgraph_medium.txt");
+    test.readingTextFile("tests/testgraph_medium.txt");
 
     dijkstra d;
 

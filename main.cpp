@@ -13,11 +13,9 @@ int main()
     std::cout << endl;
 
     file_Reader custom;
-    std::cout<<FGRN("Please enter the 'Absolute' path of the file 'custom.txt'")<<std::endl;
-    std::string s;
-    cin>>s;
+
     
-    custom.readingTextFile(s);
+    custom.readingTextFile("custom.txt");
     bfs bfs_graph_traversal;
     vector<vector<int>> adjM = custom.getAdj();
     int node = 0;
